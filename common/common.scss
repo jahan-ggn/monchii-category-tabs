@@ -32,7 +32,7 @@ html:not(.has-full-page-chat) {
           border-bottom: 2px solid transparent;
           border-radius: 0;
           background: transparent !important;
-          color: var(--secondary) !important;
+          color: var(--header_primary) !important;
           box-shadow: none;
           font-size: var(--font-0);
           font-weight: 600;
@@ -48,12 +48,12 @@ html:not(.has-full-page-chat) {
 
           &:hover,
           &:focus {
-            color: var(--d-nav-color--active) !important;
+            color: var(--header_primary) !important;
             background: transparent !important;
           }
 
           &.active {
-            color: var(--d-nav-color--active) !important;
+            color: var(--header_primary) !important;
             background: transparent !important;
             border-bottom-color: currentcolor;
           }
@@ -77,7 +77,7 @@ html:not(.has-full-page-chat) {
 
   .d-overflow-controls__btn {
     background: var(--header_background) !important;
-    color: var(--secondary) !important;
+    color: var(--header_primary) !important;
     border: 0;
     border-radius: 0;
     box-shadow: none !important;
