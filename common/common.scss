@@ -55,63 +55,55 @@ html:not(.has-full-page-chat) {
           &.active {
             color: var(--d-nav-color--active) !important;
             background: transparent !important;
+            border-bottom-color: currentcolor;
           }
         }
       }
     }
   }
 
-  .horizontal-overflow-nav__scroll-left::after {
-    background: linear-gradient(
-      to right,
-      rgb(var(--header_background-rgb), 1),
-      rgb(var(--header_background-rgb), 0)
-    );
-  }
-
-  .horizontal-overflow-nav__scroll-right::before {
-    background: linear-gradient(
-      to left,
-      rgb(var(--header_background-rgb), 1),
-      rgb(var(--header_background-rgb), 0)
-    );
-  }
-
   &.mobile-view {
     .custom-categories-navbar {
       padding: 0;
     }
+  }
+}
 
-    .d-header .horizontal-overflow-nav {
-      position: relative;
+.d-header .custom-categories-navbar {
+  .horizontal-overflow-nav__controls {
+    --fade-color: var(--header_background);
+    --d-overflow-controls-btn-size: 2rem;
+  }
 
-      &::before {
-        position: absolute;
-        content: "";
-        height: 100%;
-        z-index: 2;
-        width: 10px;
-        background: linear-gradient(
-          to right,
-          rgb(var(--header_background-rgb), 1),
-          rgb(var(--header_background-rgb), 0)
-        );
-      }
+  .d-overflow-controls__btn {
+    background: var(--header_background) !important;
+    color: var(--secondary) !important;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none !important;
+    padding: 0;
 
-      &::after {
-        position: absolute;
-        right: 0;
-        top: 0;
-        content: "";
-        height: 100%;
-        z-index: 2;
-        width: 10px;
-        background: linear-gradient(
-          to left,
-          rgb(var(--header_background-rgb), 1),
-          rgb(var(--header_background-rgb), 0)
-        );
-      }
+    .d-icon {
+      color: inherit;
+      font-size: 1rem;
     }
+  }
+}
+
+.mobile-view .d-header > .wrap > .contents {
+  position: relative;
+  padding-inline-start: 44px;
+
+  .panel,
+  .d-header-icons {
+    position: static;
+  }
+
+  .hamburger-dropdown {
+    position: absolute;
+    inset-inline-start: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
   }
 }

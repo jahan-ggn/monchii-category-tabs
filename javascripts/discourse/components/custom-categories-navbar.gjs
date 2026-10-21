@@ -43,10 +43,9 @@ export default class CustomCategoriesNavbar extends Component {
   }
 
   get shouldRender() {
-    const isChat = this.router.currentRouteName.startsWith("chat");
-    const isMinimized = this.args.outletArgs.minimized;
+    const isChat = this.router.currentRouteName?.startsWith("chat");
 
-    return !isMinimized && !isChat && this.visibleCategories.length > 0;
+    return !isChat && this.visibleCategories.length > 0;
   }
 
   setActiveCategory() {
