@@ -1,2 +1,4 @@
-example_setting:
-  default: true
+categories_to_show:
+  type: list
+  list_type: category
+  default: ""

@@ -1,5 +1,5 @@
 en:
   theme_metadata:
-    description: ''
+    description: ""
     settings:
-      example_setting: A description of a setting.
+      categories_to_show: Choose categories to show in the navigation, in the selected order. Leave empty to show all visible top-level categories. Category permissions still apply.

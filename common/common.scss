@@ -1,0 +1,117 @@
+html:not(.has-full-page-chat) {
+  .d-header:has(.horizontal-overflow-nav) {
+    height: 6.5em;
+  }
+
+  .d-header {
+    .custom-categories-navbar {
+      height: auto;
+    }
+
+    .horizontal-overflow-nav {
+      font-size: var(--font-0);
+
+      .nav-pills {
+        margin: 0;
+        gap: 0.4em;
+        align-items: center;
+      }
+
+      li {
+        margin: 0;
+        white-space: nowrap;
+
+        a {
+          margin: 0;
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          min-height: 44px;
+          padding: 0.65em 1em;
+          border: 0;
+          border-bottom: 2px solid transparent;
+          border-radius: 0;
+          background: transparent !important;
+          color: var(--secondary) !important;
+          box-shadow: none;
+          font-size: var(--font-0);
+          font-weight: 600;
+          line-height: 1.2;
+          text-decoration: none;
+
+          .badge-category__wrapper,
+          .badge-category,
+          .badge-category__name,
+          .d-icon {
+            color: inherit !important;
+          }
+
+          &:hover,
+          &:focus {
+            color: var(--d-nav-color--active) !important;
+            background: transparent !important;
+          }
+
+          &.active {
+            color: var(--d-nav-color--active) !important;
+            background: transparent !important;
+          }
+        }
+      }
+    }
+  }
+
+  .horizontal-overflow-nav__scroll-left::after {
+    background: linear-gradient(
+      to right,
+      rgb(var(--header_background-rgb), 1),
+      rgb(var(--header_background-rgb), 0)
+    );
+  }
+
+  .horizontal-overflow-nav__scroll-right::before {
+    background: linear-gradient(
+      to left,
+      rgb(var(--header_background-rgb), 1),
+      rgb(var(--header_background-rgb), 0)
+    );
+  }
+
+  &.mobile-view {
+    .custom-categories-navbar {
+      padding: 0;
+    }
+
+    .d-header .horizontal-overflow-nav {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        z-index: 2;
+        width: 10px;
+        background: linear-gradient(
+          to right,
+          rgb(var(--header_background-rgb), 1),
+          rgb(var(--header_background-rgb), 0)
+        );
+      }
+
+      &::after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        content: "";
+        height: 100%;
+        z-index: 2;
+        width: 10px;
+        background: linear-gradient(
+          to left,
+          rgb(var(--header_background-rgb), 1),
+          rgb(var(--header_background-rgb), 0)
+        );
+      }
+    }
+  }
+}
