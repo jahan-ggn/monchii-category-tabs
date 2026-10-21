@@ -1,5 +1,5 @@
 en:
   theme_metadata:
-    description: ""
+    description: "A theme component that adds a horizontally scrollable category navigation bar, with an underline highlighting the selected category."
     settings:
       categories_to_show: Choose categories to show in the navigation, in the selected order. Leave empty to show all visible top-level categories. Category permissions still apply.
