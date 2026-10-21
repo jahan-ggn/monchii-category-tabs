@@ -107,3 +107,7 @@ html:not(.has-full-page-chat) {
     margin: 0;
   }
 }
+
+.mobile-view .d-header > .wrap > .contents:has(.title--minimized) {
+  padding-inline-start: 0;
+}
