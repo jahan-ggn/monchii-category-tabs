@@ -1,6 +1,7 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
+import { ALL_PAGES_EXCLUDED_ROUTES } from "discourse/components/welcome-banner";
 import { eq } from "discourse/truth-helpers";
 import HorizontalOverflowNav from "discourse/ui-kit/d-horizontal-overflow-nav";
 import categoryLink from "discourse/ui-kit/helpers/d-category-link";
@@ -43,9 +44,27 @@ export default class CustomCategoriesNavbar extends Component {
   }
 
   get shouldRender() {
-    const isChat = this.router.currentRouteName?.startsWith("chat");
+    const route = this.router.currentRouteName;
 
-    return !isChat && this.visibleCategories.length > 0;
+    if (!route || !this.visibleCategories.length) {
+      return false;
+    }
+
+    if (route.startsWith("admin")) {
+      return false;
+    }
+
+    const hiddenRoutes = [
+      ...ALL_PAGES_EXCLUDED_ROUTES,
+      "email-login",
+      "discovery.login-required",
+      "user",
+      "chat",
+    ];
+
+    return !hiddenRoutes.some(
+      (name) => route === name || route.startsWith(`${name}.`)
+    );
   }
 
   setActiveCategory() {
